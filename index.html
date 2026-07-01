@@ -4,92 +4,257 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hope Stones</title>
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#eef7ef;color:#25312b}
-header{background:#2e8b57;color:white;text-align:center;padding:55px 20px}
-h1{font-size:3.2rem;margin:0}
-.tagline{font-size:1.3rem;margin:15px 0 30px}
-.btn{display:inline-block;background:white;color:#2e8b57;padding:14px 24px;border-radius:30px;text-decoration:none;font-weight:bold;margin:6px}
-section{max-width:900px;margin:auto;padding:35px 20px}
-.card{background:white;border-radius:18px;padding:28px;margin:22px 0;box-shadow:0 6px 18px rgba(0,0,0,.1)}
-h2{margin-top:0;font-size:2rem}
-input,textarea{width:100%;padding:14px;margin:8px 0 16px;border:1px solid #ccc;border-radius:10px;font-size:1rem}
-textarea{height:100px}
-button{background:#2e8b57;color:white;border:0;padding:14px 22px;border-radius:30px;font-weight:bold;font-size:1rem}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
-.rock{background:#f4faf5;border-radius:15px;padding:18px;text-align:center}
-footer{background:#2e8b57;color:white;text-align:center;padding:22px}
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#eef7ef;
+    color:#25312b;
+}
+
+header{
+    background:#2e8b57;
+    color:white;
+    text-align:center;
+    padding:55px 20px;
+}
+
+h1{
+    font-size:3.2rem;
+    margin:0;
+}
+
+.tagline{
+    font-size:1.3rem;
+    margin:15px 0 30px;
+}
+
+.btn{
+    display:inline-block;
+    background:white;
+    color:#2e8b57;
+    padding:14px 24px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+    margin:6px;
+}
+
+section{
+    max-width:900px;
+    margin:auto;
+    padding:35px 20px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    margin:22px 0;
+    box-shadow:0 6px 18px rgba(0,0,0,.1);
+}
+
+h2{
+    margin-top:0;
+    font-size:2rem;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px;
+    margin:8px 0 16px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:1rem;
+    box-sizing:border-box;
+}
+
+textarea{
+    height:100px;
+}
+
+button{
+    background:#2e8b57;
+    color:white;
+    border:0;
+    padding:14px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:1rem;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#256d46;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.rock{
+    background:#f4faf5;
+    border-radius:15px;
+    padding:18px;
+    text-align:center;
+}
+
+footer{
+    background:#2e8b57;
+    color:white;
+    text-align:center;
+    padding:22px;
+}
+
+#thankYou{
+    display:none;
+    margin-top:20px;
+    color:#2e8b57;
+    font-weight:bold;
+    font-size:1.1rem;
+}
 </style>
+
 </head>
 
 <body>
 
 <header>
 <h1>Hope Stones</h1>
-<p class="tagline">Sharing hope, one painted rock at a time.</p>
+
+<p class="tagline">
+Sharing hope, one painted rock at a time.
+</p>
+
 <a class="btn" href="#upload">Upload a Stone</a>
 <a class="btn" href="#find">Find Hope Stones</a>
+
 </header>
 
 <section>
+
 <div class="card">
+
 <h2>What is Hope Stones?</h2>
+
 <p>
 Hope Stones is a community project for mental health, kindness, and encouragement.
 People paint rocks with positive messages, place them in public areas, and upload them
 so others can discover them.
 </p>
+
 </div>
 
 <div class="card" id="upload">
+
 <h2>Upload a Hope Stone</h2>
-<p>Share a painted rock and a positive message. All uploads will be reviewed before being shown publicly.</p>
+
+<p>
+Share a painted rock and a positive message.
+All uploads will be reviewed before being shown publicly.
+</p>
 
 <form>
-<label>Rock photo</label>
+
+<label>Rock Photo</label>
 <input type="file" accept="image/*">
 
-<label>Positive message</label>
+<label>Positive Message</label>
 <textarea placeholder="Example: You matter. Keep going."></textarea>
 
-<label>City or public location</label>
+<label>City or Public Location</label>
 <input type="text" placeholder="Example: Chesapeake, VA">
 
-<button type="button">Submit for Review</button>
+<button type="button" onclick="submitStone()">
+Submit for Review
+</button>
+
+<p id="thankYou">
+✅ Thank you! Your Hope Stone has been submitted for review.
+</p>
+
 </form>
+
 </div>
 
 <div class="card" id="find">
+
 <h2>Find Hope Stones</h2>
+
 <p>
 A map will go here soon so people can see where Hope Stones have been placed.
 </p>
-<div style="background:#d9eadf;border-radius:15px;padding:50px;text-align:center;font-size:1.3rem;">
+
+<div style="
+background:#d9eadf;
+border-radius:15px;
+padding:50px;
+text-align:center;
+font-size:1.3rem;
+">
+
 📍 Interactive Map Coming Soon
+
 </div>
+
 </div>
 
 <div class="card">
+
 <h2>Community Gallery</h2>
+
 <div class="gallery">
-<div class="rock">🎨<br><strong>You Are Enough</strong></div>
-<div class="rock">💚<br><strong>Keep Going</strong></div>
-<div class="rock">🌞<br><strong>Better Days Ahead</strong></div>
+
+<div class="rock">
+🎨<br>
+<strong>You Are Enough</strong>
 </div>
+
+<div class="rock">
+💚<br>
+<strong>Keep Going</strong>
+</div>
+
+<div class="rock">
+🌞<br>
+<strong>Better Days Ahead</strong>
+</div>
+
+</div>
+
 </div>
 
 <div class="card">
+
 <h2>Safety & Review</h2>
+
 <p>
 To keep Hope Stones safe and positive, uploads may be rejected if they are not painted rocks,
 contain inappropriate images, or include triggering or harmful content.
 </p>
+
 </div>
+
 </section>
 
 <footer>
+
 © 2026 Hope Stones
+
 </footer>
+
+<script>
+
+function submitStone(){
+
+document.getElementById("thankYou").style.display="block";
+
+}
+
+</script>
 
 </body>
 </html>
